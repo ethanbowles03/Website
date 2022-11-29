@@ -2,56 +2,63 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type = "text/javascript" src="Scripts/myscripts.js"></script>
     <title>Ethan Bowles</title>
   </head>
   <body>
     <nav class="navbar">
-      <div class="contents">
+      <div class="nav-contents">
         <div class="logo">
           <img href="github.com" src="assets/logo.png" alt="logo">
         </div>
         <ul class="menu">
-          <div class="icon cancel-btn">
-            <img class="menu-icon" src="assets/navbar-toggle.png"></img>
+          <div class="icon canButton">
+            <img class="menu-icon" onclick="cancelBtnClicked()" src="assets/navbar-toggle.png"></img>
           </div>
-          <li><a class="active" href="#about"><strong>About</strong></a></li>
-          <li><a href="#port"><strong>Portfolio</strong></a></li>
+          <li><a class="active" href="#about-title"><strong>About</strong></a></li>
+          <li><a href="#projects"><strong>Projects</strong></a></li>
           <li><a href="#contact"><strong>Contact</strong></a></li>
           <li><a href="https://www.github.com/ethanbowles03">
             <img class="git" src="assets/git.png" alt="git" >
           </a></li>
-          <div class="icon menu-btn">
-            <img class="menu-icon" src="assets/navbar-toggle.png"></img>
-          </div>
         </ul>
+        <div class="icon menuButton">
+          <img class="menu-icon" onclick="menuBtnClicked()" src="assets/navbar-toggle.png"></img>
+        </div>
       </div>
     </nav>
-
-
-    <!-- <header>
-      <div class="logo">
-        <img href="github.com" src="assets/logo.png" alt="logo">
+    <div class="page-content">
+      <div class="background">
+        <div class="welcome-container">
+          <div class="welcome-text" id="welcome-text">
+            <script>
+              welcomeText(" Hi I'm Ethan, *Welcome To My Portfolio");
+            </script>
+          </div>
+        </div>
       </div>
-      <ul class="menu">
-        <li><a class="active" href="#about"><strong>About</strong></a></li>
-        <li><a href="#port"><strong>Portfolio</strong></a></li>
-        <li><a href="#contact"><strong>Contact</strong></a></li>
-        <li><a href="https://www.github.com/ethanbowles03">
-          <img class="navbar" src="assets/git.png" alt="git" >
-        </a></li>
-      </ul>
-      <div class="navbar">
-        <a class="active" href="#about"><strong>About</strong></a>
-        <a href="#port"><strong>Portfolio</strong></a>
-        <a href="#contact"><strong>Contact</strong></a>
-        <a href="https://www.github.com/ethanbowles03">
-          <img class="navbar" src="assets/git.png" alt="git" >
-        </a>
+      <div class="content-body">
+        <div class="about-title" id="about-title">
+          About Me
+        </div>
+        <div class="about-wrapper">
+          <div class="about-card" id="about-card">
+            <div class="about-card-body">
+              - Aspiring software developer <br>
+              - 2nd Year @ University of Utah <br>
+              - Studying Comptuter Science and Math <br>
+              - I love pushing myself and meeting new people <br>
+              </math>
+            </div>
+          </div>
+          <div class="about-photo" id="about-photo">
+            <img class="about-image" src="assets/about-image.jpg"></img>
+          </div>
+        </div>
+        <div class="projects-title" id="projects-title">
+          Projects
+        </div>
       </div>
-    </header> -->
-
-    <body>
-
-    </body>
-  </body>
+    </div>
 </html>

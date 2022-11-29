@@ -2,33 +2,32 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .navbar{
   position: fixed;
   width: 100%;
+  z-index: 100;
   background: #46EFE9;
-  opacity: 0.7;
-  padding: 25px 0;
+  padding: 20px 0;
   transition: all 0.3s ease;
 }
 
-.contents{
+.navbar.sticky{
+  padding: 20px 0;
+}
+
+.nav-contents{
   margin: auto;
   padding: 0 30px;
 }
 
-.navbar .contents{
+.navbar .nav-contents{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-/* .navbar.sticky{
-  background: #1b1b1b;
-  padding: 10px 0;
-  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
-} */
 
 .navbar .logo img{
   width: 175px;
@@ -63,56 +62,179 @@
 }
 
 .icon{
-  color: black;
-  font-size: 20px;
   cursor: pointer;
   display: none;
 }
-.menu .cancel-btn{
-  position: absolute;
-  right: 30px;
+
+.navbar.sticky .icon.canButton{
   top: 20px;
 }
 
-@media (max-width: 868px) {
-  .icon{
-      display: block;
-  }
+.background{
+  background: url("assets/background.jpg") no-repeat;
+  height: 100vh;
+  z-index: -1;
+  background-color: grey;
+  background-size: cover;
+  background-blend-mode: luminosity;
+  background-position: center;
+  background-attachment: fixed;
+}
 
-  .icon.hide{
+.background .welcome-container{
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  top: 50%;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 75px;
+  font-style: oblique;
+  font-weight: 900;
+  color: white;
+}
+
+.content-body{
+  z-index: 1;
+  margin: 75px 100px;
+}
+
+.about-title{
+  text-align: center;
+  align-content: center;
+  width: 100%;
+  font-size: 50px;
+  font-weight: 900;
+  padding: 0 0 75px 0;
+}
+
+.content-body .about-wrapper{
+  position: relative;
+  width: 100%;
+  height:650px;
+  max-height:650px;
+  display: inline-flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-wrapper .about-card{
+  border: 3px solid grey;
+  background-color: white;
+  z-index: 3;
+  max-width: 500px;
+  min-width: 500px;
+  text-align: center;
+  line-height: 45px;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-card .about-card-body{
+  font-size: 30px;
+  font-weight: 400;
+}
+
+#about-card:hover + #about-photo{
+  transform: translate(500px,0);
+  -webkit-transform: translate(500px,0);
+  -moz-transform: translate(500px,0);
+  -o-transform: translate(500px,0);
+  -ms-transform: translate(500px,0);
+  opacity: 1.0;
+}
+
+.about-wrapper .about-photo{
+  position: relative;
+  left: -500px;
+  z-index: 2;
+
+  border: 3px solid grey;
+  max-width: 500px;
+  min-width: 500px;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: contain;
+  opacity: 0.0;
+
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+}
+
+.about-wrapper .about-photo img{
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.projects-title{
+  text-align: center;
+  align-content: center;
+  width: 100%;
+  font-size: 50px;
+  font-weight: 900;
+  padding: 500px 0 75px 0;
+}
+
+@media (max-width: 1225px) {
+  .about-wrapper .about-photo{
     display: none;
   }
 
+  #about-card:hover + #about-photo{
+    display: none;
+  }
+}
+
+@media (max-width: 725px) {
+  .about-wrapper .about-card{
+    min-width: inherit;
+  }
+}
+
+
+@media (max-width: 868px) {
+  .icon{
+    display: block;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 75px;
+    z-index: 10;
+  }
+  .icon.canButton{
+    display: none;
+  }
+  .icon.canButton.show{
+    display: block;
+  }
+  .icon.hide{
+    display: none;
+  }
   .navbar .menu{
     position: fixed;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 100%;
-    max-width: 400px;
-    left: -100%;
-    top: 0px;
+    background: white;
     display: block;
-    padding: 40px 0;
     text-align: center;
-    background: #black;
+    clip-path: circle(25px at calc(100% - 55px) calc(0% + 50px));
     transition: all 0.3s ease;
   }
-  .navbar.show .menu{
-    left: 0%;
+
+  .navbar .menu.active{
+    clip-path: circle(75%);
   }
   .navbar .menu li{
     margin-top: 45px;
   }
   .navbar .menu li a{
     font-size: 23px;
-    margin-left: -100%;
-    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  .navbar.show .menu li a{
-    margin-left: 0px;
-  }
-}
-@media (max-width: 380px) {
-  .navbar .logo a{
-    font-size: 27px;
   }
 }
