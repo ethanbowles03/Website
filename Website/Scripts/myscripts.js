@@ -23,6 +23,7 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   setupvars();
   this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+  this.scrollY > window.innerHeight ? navbar.style.background = "#F0EAD6" : navbar.style.background = "transparent" ;
 }
 
 function welcomeText(text) {
@@ -46,5 +47,5 @@ function welcomeText(text) {
       setTimeout(printNextLetter, speed);
     }
   }
-  printNextLetter();
+  setTimeout(printNextLetter, 1000);
 }

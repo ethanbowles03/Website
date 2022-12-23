@@ -9,24 +9,19 @@
   position: fixed;
   width: 100%;
   z-index: 100;
-  background: #46EFE9;
   padding: 20px 0;
-  transition: all 0.3s ease;
 }
 
 .navbar.sticky{
   padding: 20px 0;
 }
 
-.nav-contents{
-  margin: auto;
-  padding: 0 30px;
-}
-
 .navbar .nav-contents{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: auto;
+  padding: 0 30px;
 }
 
 .navbar .logo img{
@@ -74,9 +69,7 @@
   background: url("assets/background.jpg") no-repeat;
   height: 100vh;
   z-index: -1;
-  background-color: grey;
   background-size: cover;
-  background-blend-mode: luminosity;
   background-position: center;
   background-attachment: fixed;
 }
@@ -85,7 +78,7 @@
   position: absolute;
   margin: auto;
   width: 100%;
-  top: 50%;
+  top: 40%;
   text-align: center;
   transition: all 0.3s ease;
   font-size: 75px;
@@ -96,7 +89,7 @@
 
 .content-body{
   z-index: 1;
-  margin:-120px 0 0; /* negative fixed header height */
+  background-color: #F0EAD6
 }
 
 .about-title{
@@ -105,7 +98,7 @@
   width: 100%;
   font-size: 50px;
   font-weight: 900;
-  padding: 195px 0 75px 0;
+  padding: 150px 0 75px 0;
 }
 
 .content-body .about-wrapper{
@@ -119,38 +112,42 @@
 }
 
 .about-wrapper .about-card{
-  border: 3px solid grey;
   background-color: white;
   z-index: 3;
   display: flex;
+  padding: 50px;
   max-width: 500px;
   min-width: 500px;
-  text-align: center;
-  line-height: 45px;
+  line-height: 40px;
   justify-content: center;
   align-items: center;
+
+  transform: translate(250px,0);
+  transition: all 1s ease-in-out;
 }
 
 .about-card .about-card-body{
-  font-size: 30px;
+  font-size: 23px;
   font-weight: 400;
 }
 
+.about-card:hover{
+  transition: all 1s ease-in-out;
+  transform: translate(0);
+}
+
+
 #about-card:hover + #about-photo{
-  transform: translate(500px,0);
-  -webkit-transform: translate(500px,0);
-  -moz-transform: translate(500px,0);
-  -o-transform: translate(500px,0);
-  -ms-transform: translate(500px,0);
+  transition: all 1s ease-in-out;
+  transform: translate(250px,0);
   opacity: 1.0;
 }
 
 .about-wrapper .about-photo{
   position: relative;
-  left: -500px;
+  left: -250px;
   z-index: 2;
 
-  border: 3px solid grey;
   max-width: 500px;
   min-width: 500px;
   background-position: center;
@@ -159,10 +156,6 @@
   opacity: 0.0;
 
   transition: all 1s ease-in-out;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
 }
 
 .about-wrapper .about-photo img{
@@ -178,16 +171,98 @@
   width: 100%;
   font-size: 50px;
   font-weight: 900;
-  padding: 500px 0 75px 0;
+  padding: 200px 0 75px 0;
 }
+
+.content-body .projects-wrapper{
+  position: relative;
+  width: 100%;
+  padding: 25px;
+  display: inline-flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.projects-wrapper .projects{
+  list-style: none;
+  align-items: center;
+  columns: 2;
+  column-gap: 50px;
+}
+
+.projects .project{
+  background-color: white;
+  height: 650px;
+  max-width: 500px;
+  min-width: 500px;
+  margin: 0 0 50px 0;
+  line-height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.project .project-text{
+  padding: 50px;
+  /* opacity: 0.0; */
+  font-size: 23px;
+  font-weight: 400;
+  z-index: 3;
+  /* opacity: 1.0; */
+}
+
+.project .project-image{
+  position: absolute;
+  z-index: 4;
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 650px;
+  min-height: 650px;
+  display: flex;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: contain;
+  transition: all 1s ease-in-out;
+}
+
+.project .project-image img{
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#project-image:hover{
+  opacity: 0.1;
+}
+
+
+
 
 @media (max-width: 1225px) {
   .about-wrapper .about-photo{
     display: none;
   }
 
-  #about-card:hover + #about-photo{
-    display: none;
+  .about-wrapper .about-card{
+    transition: all 0s ease-in-out;
+    transform: translate(0);
+  }
+
+  .projects-wrapper .projects{
+    list-style: none;
+    align-items: center;
+    columns: 1;
+    column-gap: 50px;
+  }
+
+  .project .project-image{
+    opacity: 0.1;
+  }
+}
+
+@media (max-width: 600px) {
+  .background .welcome-container{
+    top: 35%;
   }
 }
 
