@@ -25,6 +25,8 @@ Nov 29, 2022:
   * Can add anything in the future
 - Started working on projects section
 
+*** Finals Break ***
+
 Dec 23, 2022:
 
 - Finished the code for the projects screen
