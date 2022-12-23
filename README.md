@@ -24,3 +24,8 @@ Nov 29, 2022:
 - Finished working on about me section
   * Can add anything in the future
 - Started working on projects section
+
+Dec 23, 2022:
+
+- Finished the code for the projects screen
+- Need to fill in photos and details of the projects
