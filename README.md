@@ -31,3 +31,8 @@ Dec 23, 2022:
 
 - Finished the code for the projects screen
 - Need to fill in photos and details of the projects
+
+Dec28, 2022:
+
+- Finished the structure of the code. Need to fill in the details and revise
+- Check for bugs
