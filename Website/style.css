@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia,Times,Times New Roman,serif;
 }
 
 .navbar{
@@ -222,26 +222,18 @@
 .project .project-image{
   position: absolute;
   z-index: 4;
+  object-fit: cover;
   max-width: 500px;
   min-width: 500px;
   max-height: 650px;
   min-height: 650px;
   display: flex;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: contain;
+  opacity: 0.1;
   transition: all 1s ease-in-out;
 }
 
-.project .project-image img{
-  max-width: 100%;
-  max-height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-}
-
 #project-image:hover{
-  opacity: 0.2;
+  opacity: 0;
 }
 
 
