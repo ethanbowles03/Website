@@ -1,3 +1,3 @@
 # Website
 
-[Website](ethanpbowles.com)
+[Website](https://ethanpbowles.com)
